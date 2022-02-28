@@ -1,0 +1,14 @@
+Question 1.
+Create a class Student- Rollno, name, total, passed
+implements stream operation for following operations:
+1)Show ten topper of the class
+2)partition the class in sections 1) passed students ,2) Failed students   
+3) Display average marks of the class
+
+Question 2
+Create a list of string which conatins dupicate name. Now convert this string to set to remove duplicacy
+
+Question 3
+
+Mr A is having a account . He has done some transaction on his account. He wants to see a complete report of transaction. 
+He wants transaction should be shown withdrawnwise and deposite wise At the end final remaining balance should be shown.
