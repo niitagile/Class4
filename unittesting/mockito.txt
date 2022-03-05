@@ -1,0 +1,86 @@
+Mockito- framework using to create simple and basic test apis  for performing unit tesing
+
+What is mocking
+Mocking is a way to test the functionality of a class in isolation
+A mock object returns a dummy data corresponding to some dummy input passed to it
+It uses java Reflection in order to create mock objects for a iven interface
+
+Methods of Mockito
+mock()--> to create object of a given class
+when()-- it enables subbing method. 
+when (mock.someCode()).thenReturn(5);
+verify()
+spy()- it is create spy of real object. 
+List list=spy(ArrayList.class)
+
+reset()- reset the mocks
+used for working with the conatiners injected mock
+
+doThrow()- to throw any exception
+
+doAnswer()- we want to stub a void method with a generic Answer type
+
+inOrder() - used to create objects that allow the verification of mock in a specific order
+
+times()-- verify the exact number of methods invocation
+
+
+atLeastOnce()- at least one time method should execute
+timeOut()- to perform verification with a timeOut
+
+
+ Mock annotation
+@RunWith(MockitoJunitRunner.class)
+class DemoMock{
+@Mock
+ToDoService serviceMock;
+
+}
+
+@Spy
+List<String> mylist=new ArrayList<String>();
+
+@Test
+public void test1(){
+	mylist.add("Hello");
+	Mockito.verify(spyList).add("Hello");
+	assertEquals(1,spyList.size());
+*************************************************
+@Capture- is used to create an ArgumentCapture instance to capture method argument values for further assertations
+
+@Mock
+HashMap<String, Integre> MyMap;
+@Capture
+ArgumentCaptor<String> keyCapture;
+@Test
+public void test1(){
+	MyMap.put("Anil",10);
+	Mockito.verify(MyMap).put(keyCapture.capture(),valueCapture.getValue());
+assertEquals(new Integer(10),valueCapture.getValue());
+
+}
+**************************************************
+@InjectMocks- to inject dependencies
+@Mock
+Map<String, String> Countries;
+ 
+@InjectMocks
+MyDictionary dic = new Continent();
+ 
+@Test
+public void UseInjectMocksAnnotation() {
+   Mockito.when(Countries.get("India")).thenReturn("asia");
+ 
+   assertEquals("asia", dic.getContinent("India"));
+}
+
+
+
+
+
+}
+
+
+
+
+
